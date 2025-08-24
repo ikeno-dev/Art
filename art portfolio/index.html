@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Portfolio | Sade</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <a href="#home" class="logo">Sade.</a>
+        <nav aria-label="Main Navigation">
+            <a href="#home" class="active">Home</a>
+            <a href="#info">Info</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#rules">Rules</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </header>
+
+    <main>
+        <section id="home" class="home">
+            <div class="home-img">
+                <img src="main.jpg" alt="Avatar illustration of Sade">
+            </div>
+            <div class="home-content">
+                <h1>Hi, It's <span>Sade</span></h1>
+                <h3 class="typing-text"></h3>
+                <p>I'm a digital artist specializing in character illustrations. I love bringing ideas to life with vibrant colors and expressive designs. Explore my work and feel free to reach out!</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/sadeks_" target="_blank" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.pixiv.net/en/users/82297025" target="_blank" aria-label="Pixiv"><i class="fa-brands fa-pixiv"></i></a>
+                    <a href="https://discord.com/users/749154783708971018" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                </div>
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+        </section>
+
+        <section id="info" class="info">
+            <h2 class="heading">Commission Types</h2>
+            <div class="info-content">
+                <div class="will-draw">
+                    <h3>What I Will Draw 🎨</h3>
+                    <ul>
+                        <li>Original Characters</li>
+                        <li>Fanart</li>
+                        <li>Roblox Avatars</li>
+                        <li>Minor Blood/Gore</li>
+                        <li>NSFW (contact for details)</li>
+                    </ul>
+                </div>
+                <div class="wont-draw">
+                    <h3>What I Won't Draw 🚫</h3>
+                    <ul>
+                        <li>Lolicon/Shotacon</li>
+                        <li>Complex Backgrounds</li>
+                        <li>Realism</li>
+                        <li>Mecha</li>
+                        <li>Full Body Illustrations</li>
+                    </ul>
+                </div>
+                <div class="prices">
+                    <h3>Prices 💰</h3>
+                    <h4>Lineart</h4>
+                    <ul>
+                        <li><strong>Headshot:</strong> ₱150 / $3</li>
+                        <li><strong>Bust:</strong> ₱200 / $4</li>
+                        <li><strong>Half Body:</strong> ₱250 / $5</li>
+                    </ul>
+                    <h4>Colored</h4>
+                    <ul>
+                        <li><strong>Headshot:</strong> ₱250 / $5</li>
+                        <li><strong>Bust:</strong> ₱350 / $6</li>
+                        <li><strong>Half Body:</strong> ₱400 / $7</li>
+                    </ul>
+                    <h4>Rendered</h4>
+                    <ul>
+                        <li><strong>Headshot:</strong> ₱450 / $8</li>
+                        <li><strong>Bust:</strong> ₱550 / $10</li>
+                        <li><strong>Half Body:</strong> ₱650 / $12</li>
+                    </ul>
+                    <p><strong>Additional Character:</strong> +50% of base price</p>
+                    <p><strong>Simple Background:</strong> +₱150-₱300 / $3-$5</p>
+                    <p>Prices may vary depending on the complexity of the design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <h2 class="heading">My Art Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item"><img src="images/art1.jpg" alt="Artwork 1"></div>
+                <div class="gallery-item"><img src="images/art2.jpg" alt="Artwork 2"></div>
+                <div class="gallery-item"><img src="images/art3.jpg" alt="Artwork 3"></div>
+                <div class="gallery-item"><img src="images/art4.jpg" alt="Artwork 4"></div>
+                <div class="gallery-item"><img src="images/art5.jpg" alt="Artwork 5"></div>
+                <div class="gallery-item"><img src="images/art6.jpg" alt="Artwork 6"></div>
+                <div class="gallery-item"><img src="images/art7.jpg" alt="Artwork 7"></div>
+                <div class="gallery-item"><img src="images/art8.jpg" alt="Artwork 8"></div>
+                <div class="gallery-item"><img src="images/art9.jpg" alt="Artwork 9"></div>
+            </div>
+        </section>
+
+        <!-- Image Zoom Modal -->
+        <div id="imgModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg" alt="Zoomed artwork">
+        </div>
+
+        <section id="rules" class="rules">
+            <h2 class="heading">Commission Rules</h2>
+            <div class="rules-content">
+                <h3>Payment and Process 💰</h3>
+                <ul>
+                    <li><strong>Payment:</strong> 50% deposit upfront to secure your spot. Remaining 50% due upon completion.</li>
+                    <li><strong>Refunds:</strong> Deposit non-refundable once the sketch is approved. Full refund only if I cannot complete the work.</li>
+                    <li><strong>Timeline:</strong> Updates provided regularly; completion time varies by complexity and workload.</li>
+                </ul>
+                <h3>Usage and Rights 📝</h3>
+                <ul>
+                    <li><strong>Personal Use:</strong> For personal avatars, wallpapers, social media, etc.</li>
+                    <li><strong>Commercial Use:</strong> Discuss license fee before use for merchandise or publications.</li>
+                    <li><strong>Credit:</strong> Credit me whenever posting the art online.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 class="heading">Get in Touch!</h2>
+            <div class="contact-content">
+                <p>Ready to commission a piece or have a question? Reach out via social media or email. I look forward to working with you!</p>
+                <div class="contact-methods">
+                    <a href="mailto:aidesade43@gmail.com" class="contact-btn">
+                        <i class="fa-solid fa-envelope"></i> Email Me
+                    </a>
+                    <a href="https://discord.com/users/749154783708971018" class="contact-btn" target="_blank">
+                        <i class="fa-brands fa-discord"></i> Discord
+                    </a>
+                </div>
+                <p class="email-note">
+                    <i class="fa-solid fa-lightbulb"></i> Note: For formal inquiries, email is preferred.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="dark-mode.js"></script>
+    <script src="slot.js"></script>
+
+    <!-- Modal Script -->
+    <script>
+        const modal = document.getElementById("imgModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeBtn = document.querySelector(".modal .close");
+
+        document.querySelectorAll(".gallery-item img").forEach(img => {
+            img.addEventListener("click", () => {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+            });
+        });
+
+        closeBtn.onclick = () => modal.style.display = "none";
+        modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slot Admin</title>
+</head>
+<body>
+  <h2>Slot Manager (Admin Only)</h2>
+  <div id="slots"></div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+    import { getDatabase, ref, onValue, update } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+      databaseURL: "https://YOUR_PROJECT.firebaseio.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT.appspot.com",
+      messagingSenderId: "SENDER_ID",
+      appId: "APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getDatabase(app);
+
+    // Auto-login admin (replace with your email + password)
+    signInWithEmailAndPassword(auth, "YOUR_ADMIN_EMAIL", "YOUR_PASSWORD")
+      .catch(err => console.error(err));
+
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        console.log("Logged in as:", user.email);
+        loadSlots();
+      }
+    });
+
+    function loadSlots() {
+      const slotsRef = ref(db, "slots");
+      onValue(slotsRef, (snapshot) => {
+        const slots = snapshot.val();
+        const slotDiv = document.getElementById("slots");
+        slotDiv.innerHTML = "";
+
+        for (let key in slots) {
+          const wrapper = document.createElement("div");
+          wrapper.style.margin = "10px";
+
+          const label = document.createElement("span");
+          label.innerText = `${key} - ${slots[key].status} `;
+
+          const btnAvailable = document.createElement("button");
+          btnAvailable.innerText = "Set Available";
+          btnAvailable.onclick = () => update(ref(db, "slots/" + key), { status: "available" });
+
+          const btnFull = document.createElement("button");
+          btnFull.innerText = "Set Full";
+          btnFull.onclick = () => update(ref(db, "slots/" + key), { status: "full" });
+
+          wrapper.appendChild(label);
+          wrapper.appendChild(btnAvailable);
+          wrapper.appendChild(btnFull);
+
+          slotDiv.appendChild(wrapper);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
